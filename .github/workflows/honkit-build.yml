@@ -1,0 +1,32 @@
+name: Build and Deploy HonKit
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Prepare HonKit config
+        run: |
+          cp src/_setting/setting_html.json src/book.json
+
+      - name: Build HonKit
+        run: |
+          docker run \
+            -v ${{ github.workspace }}/src:/documents \
+            --rm \
+            -h honkit \
+            yukatayu/honkit_env_v1:v1.2 \
+            build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src/_book
+          publish_branch: gh-pages
