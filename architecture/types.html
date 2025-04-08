@@ -1,0 +1,392 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>型 · Document</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.6">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-swagger/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-navigator/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-fixed/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ast.html" />
+    
+    
+    <link rel="prev" href="abstract.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Core
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="abstract.html">
+            
+                <a href="abstract.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="types.html">
+            
+                <a href="types.html">
+            
+                    
+                    型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="ast.html">
+            
+                <a href="ast.html">
+            
+                    
+                    抽象構文木
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x578B;">1. &#x578B;</h2>
+<h3 id="&#x57FA;&#x672C;&#x578B;">1.1. &#x57FA;&#x672C;&#x578B;</h3>
+<ul>
+<li>Int<ul>
+<li>C++ &#x306E; std::int64_t &#x578B;&#x3068;&#x5BFE;&#x5FDC;</li>
+</ul>
+</li>
+<li>Bool<ul>
+<li>C++ &#x306E; bool &#x578B;&#x3068;&#x5BFE;&#x5FDC;</li>
+</ul>
+</li>
+<li>Float<ul>
+<li>C++ &#x306E; double &#x578B;&#x3068;&#x5BFE;&#x5FDC;</li>
+</ul>
+</li>
+<li>Text<ul>
+<li>&#x6587;&#x5B57;&#x5217; &#xFF08;2^32 &#x30D0;&#x30A4;&#x30C8;&#x672A;&#x6E80;&#xFF09;</li>
+</ul>
+</li>
+<li>Video<ul>
+<li>&#x6620;&#x50CF;&#x578B;</li>
+<li>height, width &#x306F; 2^32 &#x672A;&#x6E80;</li>
+<li>&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x6570;&#x306F; 2^64 &#x672A;&#x6E80;<ul>
+<li>&#x5C06;&#x6765;&#x7684;&#x306B;&#x751F;&#x653E;&#x9001;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B;&#x6841;&#x3042;&#x3075;&#x308C;&#x3092;&#x9632;&#x3050;&#x305F;&#x3081;&#x306B;&#x591A;&#x3081;&#x306B;&#x6841;&#x6570;&#x3092;&#x6301;&#x305F;&#x305B;&#x3066;&#x3044;&#x308B;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Audio<ul>
+<li>&#x97F3;&#x58F0;&#x578B;</li>
+<li>&#x8A73;&#x7D30;&#x306F;&#x672A;&#x5B9A;</li>
+</ul>
+</li>
+<li>Vector &#x4E0A;&#x8A18;&#x306E;&#x578B;&#x306E;&#x53EF;&#x5909;&#x9577;&#x914D;&#x5217; &#xFF08;2^32 &#x500B;&#x672A;&#x6E80;&#xFF09;<ul>
+<li>&#x4E2D;&#x306B; Vector &#x306F;&#x5165;&#x308C;&#x3089;&#x308C;&#x306A;&#x3044;</li>
+</ul>
+</li>
+</ul>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x578B;">1. &#x578B;</a></li><ul><li><a href="#&#x57FA;&#x672C;&#x578B;">1.1. &#x57FA;&#x672C;&#x578B;</a></li></ul></ul></div><a href="#&#x578B;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="abstract.html" class="navigation navigation-prev " aria-label="Previous page: 概要">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ast.html" class="navigation navigation-next " aria-label="Next page: 抽象構文木">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"型","level":"1.2.2","depth":2,"next":{"title":"抽象構文木","level":"1.2.3","depth":2,"path":"architecture/ast.md","ref":"architecture/ast.md","articles":[]},"previous":{"title":"概要","level":"1.2.1","depth":2,"path":"architecture/abstract.md","ref":"architecture/abstract.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"architecture/types.md","mtime":"2025-04-08T01:11:45.765Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-08T01:12:22.657Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-swagger/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-fixed/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
