@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>型 · Document</title>
+        <title>レイヤー構造（AST管理） · Document</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.6.6">
@@ -81,8 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ast.html" />
+    <link rel="next" href="ui_ast.html" />
     
+    
+    <link rel="prev" href="layer_rendering.html" />
     
 
     </head>
@@ -138,7 +140,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="types.html">
+        <li class="chapter " data-level="1.2.1" data-path="types.html">
             
                 <a href="types.html">
             
@@ -177,7 +179,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="layer_ast.html">
+        <li class="chapter active" data-level="1.2.4" data-path="layer_ast.html">
             
                 <a href="layer_ast.html">
             
@@ -264,7 +266,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >型</a>
+        <a href=".." >レイヤー構造（AST管理）</a>
     </h1>
 </div>
 
@@ -282,45 +284,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x578B;">1. &#x578B;</h2>
-<h3 id="&#x57FA;&#x672C;&#x578B;">1.1. &#x57FA;&#x672C;&#x578B;</h3>
+                                <h2 id="&#x5168;&#x4F53;&#x50CF;">1. &#x5168;&#x4F53;&#x50CF;</h2>
+<p>&#x4E0B;&#x4F4D;&#x30EC;&#x30A4;&#x30E4;&#x30FC;&#x304B;&#x3089;&#x9806;&#x306B;&#xFF0C;&#x4EE5;&#x4E0B;&#x306E;4&#x5C64;&#x3067;&#x69CB;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</p>
 <ul>
-<li>Int<ul>
-<li>C++ &#x306E; std::int64_t &#x578B;&#x3068;&#x5BFE;&#x5FDC;</li>
+<li>AST&#x69CB;&#x7BC9;&#xFF06;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x7BA1;&#x7406;&#x5C64;</li>
+<li>AST&#x5909;&#x5F62;&#x5C64;</li>
+<li>AST&#x64CD;&#x4F5C;&#x5C64;</li>
+<li>UI&#x7FFB;&#x8A33;&#x5C64;</li>
 </ul>
-</li>
-<li>Bool<ul>
-<li>C++ &#x306E; bool &#x578B;&#x3068;&#x5BFE;&#x5FDC;</li>
-</ul>
-</li>
-<li>Float<ul>
-<li>C++ &#x306E; double &#x578B;&#x3068;&#x5BFE;&#x5FDC;</li>
-</ul>
-</li>
-<li>Text<ul>
-<li>&#x6587;&#x5B57;&#x5217; &#xFF08;2^32 &#x30D0;&#x30A4;&#x30C8;&#x672A;&#x6E80;&#xFF09;</li>
-</ul>
-</li>
-<li>Video<ul>
-<li>&#x6620;&#x50CF;&#x578B;</li>
-<li>height, width &#x306F; 2^32 &#x672A;&#x6E80;</li>
-<li>&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x6570;&#x306F; 2^64 &#x672A;&#x6E80;<ul>
-<li>&#x5C06;&#x6765;&#x7684;&#x306B;&#x751F;&#x653E;&#x9001;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B;&#x6841;&#x3042;&#x3075;&#x308C;&#x3092;&#x9632;&#x3050;&#x305F;&#x3081;&#x306B;&#x591A;&#x3081;&#x306B;&#x6841;&#x6570;&#x3092;&#x6301;&#x305F;&#x305B;&#x3066;&#x3044;&#x308B;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Audio<ul>
-<li>&#x97F3;&#x58F0;&#x578B;</li>
-<li>&#x8A73;&#x7D30;&#x306F;&#x672A;&#x5B9A;</li>
-</ul>
-</li>
-<li>Vector &#x4E0A;&#x8A18;&#x306E;&#x578B;&#x306E;&#x53EF;&#x5909;&#x9577;&#x914D;&#x5217; &#xFF08;2^32 &#x500B;&#x672A;&#x6E80;&#xFF09;<ul>
-<li>&#x4E2D;&#x306B; Vector &#x306F;&#x5165;&#x308C;&#x3089;&#x308C;&#x306A;&#x3044;</li>
-</ul>
-</li>
-</ul>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x578B;">1. &#x578B;</a></li><ul><li><a href="#&#x57FA;&#x672C;&#x578B;">1.1. &#x57FA;&#x672C;&#x578B;</a></li></ul></ul></div><a href="#&#x578B;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+<h2 id="AST&#x69CB;&#x7BC9;&#xFF06;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x7BA1;&#x7406;&#x5C64;">2. AST&#x69CB;&#x7BC9;&#xFF06;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x7BA1;&#x7406;&#x5C64;</h2>
+<h3 id="&#x5F79;&#x5272;">2.1. &#x5F79;&#x5272;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h3 id="&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">2.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h2 id="AST&#x5909;&#x5F62;&#x5C64;">3. AST&#x5909;&#x5F62;&#x5C64;</h2>
+<h3 id="&#x5F79;&#x5272;">3.1. &#x5F79;&#x5272;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h3 id="&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">3.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h2 id="AST&#x64CD;&#x4F5C;&#x5C64;">4. AST&#x64CD;&#x4F5C;&#x5C64;</h2>
+<h3 id="&#x5F79;&#x5272;">4.1. &#x5F79;&#x5272;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h3 id="&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">4.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h3 id="&#x5C65;&#x6B74;&#x7BA1;&#x7406;">4.3. &#x5C65;&#x6B74;&#x7BA1;&#x7406;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h2 id="UI&#x7FFB;&#x8A33;&#x5C64;">5. UI&#x7FFB;&#x8A33;&#x5C64;</h2>
+<h3 id="&#x5F79;&#x5272;">5.1. &#x5F79;&#x5272;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h3 id="&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">5.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</h3>
+<p>TODO: &#x66F8;&#x304F;</p>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x5168;&#x4F53;&#x50CF;">1. &#x5168;&#x4F53;&#x50CF;</a></li><li><a href="#AST&#x69CB;&#x7BC9;&#xFF06;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x7BA1;&#x7406;&#x5C64;">2. AST&#x69CB;&#x7BC9;&#xFF06;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x7BA1;&#x7406;&#x5C64;</a></li><ul><li><a href="#&#x5F79;&#x5272;">2.1. &#x5F79;&#x5272;</a></li><li><a href="#&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">2.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</a></li></ul><li><a href="#AST&#x5909;&#x5F62;&#x5C64;">3. AST&#x5909;&#x5F62;&#x5C64;</a></li><ul><li><a href="#&#x5F79;&#x5272;">3.1. &#x5F79;&#x5272;</a></li><li><a href="#&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">3.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</a></li></ul><li><a href="#AST&#x64CD;&#x4F5C;&#x5C64;">4. AST&#x64CD;&#x4F5C;&#x5C64;</a></li><ul><li><a href="#&#x5F79;&#x5272;">4.1. &#x5F79;&#x5272;</a></li><li><a href="#&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">4.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</a></li><li><a href="#&#x5C65;&#x6B74;&#x7BA1;&#x7406;">4.3. &#x5C65;&#x6B74;&#x7BA1;&#x7406;</a></li></ul><li><a href="#UI&#x7FFB;&#x8A33;&#x5C64;">5. UI&#x7FFB;&#x8A33;&#x5C64;</a></li><ul><li><a href="#&#x5F79;&#x5272;">5.1. &#x5F79;&#x5272;</a></li><li><a href="#&#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;">5.2. &#x53EF;&#x80FD;&#x306A;&#x64CD;&#x4F5C;</a></li></ul></ul></div><a href="#&#x5168;&#x4F53;&#x50CF;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -363,8 +357,12 @@
 
             
                 
+                <a href="layer_rendering.html" class="navigation navigation-prev " aria-label="Previous page: レイヤー構造（レンダリング）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="ast.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 抽象構文木">
+                
+                <a href="ui_ast.html" class="navigation navigation-next " aria-label="Next page: UIとAST">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -375,7 +373,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"型","level":"1.2.1","depth":2,"next":{"title":"抽象構文木","level":"1.2.2","depth":2,"path":"architecture/ast.md","ref":"architecture/ast.md","articles":[]},"previous":{"title":"Core","level":"1.2","depth":1,"ref":"","articles":[{"title":"型","level":"1.2.1","depth":2,"path":"architecture/types.md","ref":"architecture/types.md","articles":[]},{"title":"抽象構文木","level":"1.2.2","depth":2,"path":"architecture/ast.md","ref":"architecture/ast.md","articles":[]},{"title":"レイヤー構造（レンダリング）","level":"1.2.3","depth":2,"path":"architecture/layer_rendering.md","ref":"architecture/layer_rendering.md","articles":[]},{"title":"レイヤー構造（AST管理）","level":"1.2.4","depth":2,"path":"architecture/layer_ast.md","ref":"architecture/layer_ast.md","articles":[]},{"title":"UIとAST","level":"1.2.5","depth":2,"path":"architecture/ui_ast.md","ref":"architecture/ui_ast.md","articles":[]},{"title":"マクロ展開","level":"1.2.6","depth":2,"path":"architecture/macro.md","ref":"architecture/macro.md","articles":[]},{"title":"スケジューリング","level":"1.2.7","depth":2,"path":"architecture/scheduling.md","ref":"architecture/scheduling.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"architecture/types.md","mtime":"2025-04-14T08:59:27.321Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-14T09:00:03.574Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"レイヤー構造（AST管理）","level":"1.2.4","depth":2,"next":{"title":"UIとAST","level":"1.2.5","depth":2,"path":"architecture/ui_ast.md","ref":"architecture/ui_ast.md","articles":[]},"previous":{"title":"レイヤー構造（レンダリング）","level":"1.2.3","depth":2,"path":"architecture/layer_rendering.md","ref":"architecture/layer_rendering.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"architecture/layer_ast.md","mtime":"2025-04-14T08:59:27.320Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-14T09:00:03.574Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

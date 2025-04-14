@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>バグ · Document</title>
+        <title>マクロ展開 · Document</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.6.6">
@@ -81,8 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="scheduling.html" />
     
-    <link rel="prev" href="ast.html" />
+    
+    <link rel="prev" href="ui_ast.html" />
     
 
     </head>
@@ -164,12 +166,64 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3" data-path="issues.html">
+        <li class="chapter " data-level="1.2.3" data-path="layer_rendering.html">
             
-                <a href="issues.html">
+                <a href="layer_rendering.html">
             
                     
-                    バグ
+                    レイヤー構造（レンダリング）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="layer_ast.html">
+            
+                <a href="layer_ast.html">
+            
+                    
+                    レイヤー構造（AST管理）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ui_ast.html">
+            
+                <a href="ui_ast.html">
+            
+                    
+                    UIとAST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="macro.html">
+            
+                <a href="macro.html">
+            
+                    
+                    マクロ展開
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="scheduling.html">
+            
+                <a href="scheduling.html">
+            
+                    
+                    スケジューリング
             
                 </a>
             
@@ -212,7 +266,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >バグ</a>
+        <a href=".." >マクロ展開</a>
     </h1>
 </div>
 
@@ -230,22 +284,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x65E2;&#x77E5;&#x306E;&#x4E0D;&#x5177;&#x5408;">1. &#x65E2;&#x77E5;&#x306E;&#x4E0D;&#x5177;&#x5408;</h2>
-<ul>
-<li>AST<ul>
-<li>&#x300C;A&#x306E;&#x5B50;&#x3067;&#x3042;&#x308B;C&#x300D;&#x3092;B&#x306E;&#x5B50;&#x306B;&#x3057;&#x305F;&#x5834;&#x5408;&#xFF0C;A&#x306E;&#x8A72;&#x5F53;&#x5024;&#x3092;&#x30EA;&#x30BB;&#x30C3;&#x30C8;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;<ul>
-<li>&#x30B5;&#x30D6;&#x30C4;&#x30EA;&#x30FC;&#x3068;&#x30E1;&#x30A4;&#x30F3;&#x30C4;&#x30EA;&#x30FC;&#x306B;&#x540C;&#x6642;&#x306B;&#x5B58;&#x5728;&#x3059;&#x308B;&#x306E;&#x3092;&#x8A31;&#x3059;&#x3068;&#xFF0C;&#x7D71;&#x5408;&#x6642;&#x306E;&#x8A08;&#x7B97;&#x91CF;&#x304C;&#x5897;&#x3048;&#x308B;&#x305F;&#x3081;&#xFF0C;&#x8A31;&#x53EF;&#x3057;&#x306A;&#x3044;&#x65B9;&#x91DD;&#xFF08;&#x8A73;&#x7D30;&#x306F;&#x8981;&#x691C;&#x8A0E;&#xFF09;</li>
-</ul>
-</li>
-<li>A&#x306E;&#x5B50;&#x306B;A&#x304C;&#x6765;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#xFF0C;AST&#x3068;&#x3057;&#x3066;&#x69CB;&#x7BC9;&#x3067;&#x304D;&#x3066;&#x3057;&#x307E;&#x3046;<ul>
-<li>A&#x3092;A&#x306E;&#x5B50;&#x5B6B;&#x306B;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x3088;&#x3044;&#x306E;&#x3067;&#xFF0C;parent&#x3092;&#x8FBF;&#x3063;&#x3066;A&#x304C;&#x5C45;&#x306A;&#x3044;&#x304B;&#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</li>
-<li>&#x30B5;&#x30D6;&#x30C4;&#x30EA;&#x30FC;&#x7D71;&#x5408;&#x6642;&#x306B;&#x306F;&#xFF0C;&#x3059;&#x3079;&#x3066;&#x306E;&#x30CE;&#x30FC;&#x30C9;&#x306B;&#x3064;&#x3044;&#x3066;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x65E2;&#x77E5;&#x306E;&#x4E0D;&#x5177;&#x5408;">1. &#x65E2;&#x77E5;&#x306E;&#x4E0D;&#x5177;&#x5408;</a></li></ul></div><a href="#&#x65E2;&#x77E5;&#x306E;&#x4E0D;&#x5177;&#x5408;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+                                <h2 id="&#x6982;&#x8981;">1. &#x6982;&#x8981;</h2>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h2 id="&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x5074;&#x306E;&#x60C5;&#x5831;">2. &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x5074;&#x306E;&#x60C5;&#x5831;</h2>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h2 id="&#x51E6;&#x7406;&#x4F8B;">3. &#x51E6;&#x7406;&#x4F8B;</h2>
+<p>TODO: &#x66F8;&#x304F;</p>
+<h2 id="UI&#x3067;&#x306E;&#x8868;&#x793A;&#x4F8B;">4. UI&#x3067;&#x306E;&#x8868;&#x793A;&#x4F8B;</h2>
+<p>TODO: &#x66F8;&#x304F;</p>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x6982;&#x8981;">1. &#x6982;&#x8981;</a></li><li><a href="#&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x5074;&#x306E;&#x60C5;&#x5831;">2. &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x5074;&#x306E;&#x60C5;&#x5831;</a></li><li><a href="#&#x51E6;&#x7406;&#x4F8B;">3. &#x51E6;&#x7406;&#x4F8B;</a></li><li><a href="#UI&#x3067;&#x306E;&#x8868;&#x793A;&#x4F8B;">4. UI&#x3067;&#x306E;&#x8868;&#x793A;&#x4F8B;</a></li></ul></div><a href="#&#x6982;&#x8981;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -288,10 +335,14 @@
 
             
                 
-                <a href="ast.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 抽象構文木">
+                <a href="ui_ast.html" class="navigation navigation-prev " aria-label="Previous page: UIとAST">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="scheduling.html" class="navigation navigation-next " aria-label="Next page: スケジューリング">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -300,7 +351,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"バグ","level":"1.2.3","depth":2,"previous":{"title":"抽象構文木","level":"1.2.2","depth":2,"path":"architecture/ast.md","ref":"architecture/ast.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"architecture/issues.md","mtime":"2025-04-11T16:37:41.306Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-11T16:38:17.933Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"マクロ展開","level":"1.2.6","depth":2,"next":{"title":"スケジューリング","level":"1.2.7","depth":2,"path":"architecture/scheduling.md","ref":"architecture/scheduling.md","articles":[]},"previous":{"title":"UIとAST","level":"1.2.5","depth":2,"path":"architecture/ui_ast.md","ref":"architecture/ui_ast.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"architecture/macro.md","mtime":"2025-04-14T08:59:27.321Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-14T09:00:03.574Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

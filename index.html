@@ -162,12 +162,64 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="architecture/issues.html">
+        <li class="chapter " data-level="1.2.3" data-path="architecture/layer_rendering.html">
             
-                <a href="architecture/issues.html">
+                <a href="architecture/layer_rendering.html">
             
                     
-                    バグ
+                    レイヤー構造（レンダリング）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="architecture/layer_ast.html">
+            
+                <a href="architecture/layer_ast.html">
+            
+                    
+                    レイヤー構造（AST管理）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="architecture/ui_ast.html">
+            
+                <a href="architecture/ui_ast.html">
+            
+                    
+                    UIとAST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="architecture/macro.html">
+            
+                <a href="architecture/macro.html">
+            
+                    
+                    マクロ展開
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="architecture/scheduling.html">
+            
+                <a href="architecture/scheduling.html">
+            
+                    
+                    スケジューリング
             
                 </a>
             
@@ -230,8 +282,8 @@
                                 
                                 <h2 id="PrismCascade_&#x3068;&#x306F;">1. PrismCascade &#x3068;&#x306F;</h2>
 <ul>
-<li>&#x52D5;&#x753B;&#x7DE8;&#x96C6;&#x306E;&#x57FA;&#x76E4;&#x30B7;&#x30B9;&#x30C6;&#x30E0;</li>
-<li>&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x540C;&#x58EB;&#x3092;&#x3064;&#x306A;&#x3052;&#x5408;&#x308F;&#x305B;&#x308B;&#x3053;&#x3068;&#x3067;&#x67D4;&#x8EDF;&#x306A;&#x7DE8;&#x96C6;&#x3092;&#x76EE;&#x6307;&#x3059;</li>
+<li>&#x52D5;&#x753B;&#x7DE8;&#x96C6;&#x306E;&#x57FA;&#x76E4;&#x30B7;&#x30B9;&#x30C6;&#x30E0; &#xFF08;C++&#x88FD;&#xFF09;</li>
+<li>&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306B;&#x3088;&#x308B;&#x67D4;&#x8EDF;&#x306A;&#x7DE8;&#x96C6;&#x3092;&#x76EE;&#x6307;&#x3059;</li>
 <li>GUI&#x306E;&#x6709;&#x7121;&#x3084;OS&#x306B;&#x304B;&#x304B;&#x308F;&#x3089;&#x305A;&#x52D5;&#x4F5C;&#x53EF;&#x80FD;&#x306A;&#x3082;&#x306E;&#x3092;&#x76EE;&#x6307;&#x3059;</li>
 </ul>
 <h2 id="&#x57FA;&#x672C;&#x69CB;&#x6210;">2. &#x57FA;&#x672C;&#x69CB;&#x6210;</h2>
@@ -255,7 +307,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x7A2E;&#x5225;">3. &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x7A2E;&#x5225;</h2>
+<h2 id="&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;">3. &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;</h2>
 <ul>
 <li>plugins/ &#x4EE5;&#x4E0B;&#x306B;&#x5B58;&#x5728;&#x3059;&#x308B; dll / so &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x63A2;&#x7D22;&#x3057;&#xFF0C;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3068;&#x3057;&#x3066;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x3002;<ul>
 <li>&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306B;&#x306F; Effect &#x3068; Macro &#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x3002;</li>
@@ -265,7 +317,7 @@
 <li>&#x5404;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306F;1&#x3064;&#x306E;&#x4E3B;&#x51FA;&#x529B;&#x3068;&#xFF0C;0&#xFF5E;&#x221E;&#x500B;&#x306E;&#x526F;&#x51FA;&#x529B;&#x3092;&#x6301;&#x3064;</li>
 <li>&#x5404;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306F;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x3044;&#x304F;&#x3064;&#x304B;&#x6301;&#x3064;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x3066;&#xFF0C;&#x4EE5;&#x4E0B;&#x306E;3&#x3064;&#x306E;&#x65B9;&#x6CD5;&#x3067;&#x5024;&#x3092;&#x5165;&#x529B;&#x3067;&#x304D;&#x308B;&#x3002;<ul>
 <li>&#x5024;&#x306E;&#x76F4;&#x63A5;&#x6307;&#x5B9A;</li>
-<li>&#x4ED6;&#x306E; Effect &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x57CB;&#x3081;&#x8FBC;&#x307F;</li>
+<li>&#x57CB;&#x3081;&#x8FBC;&#x3093;&#x3060;&#x4ED6; Effect &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x4E3B;&#x51FA;&#x529B;</li>
 <li>&#x4ED6;&#x306E; Effect &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x526F;&#x51FA;&#x529B;&#x306E;&#x53C2;&#x7167;</li>
 </ul>
 </li>
@@ -297,7 +349,7 @@
 </ul>
 </li>
 </ul>
-<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#PrismCascade_&#x3068;&#x306F;">1. PrismCascade &#x3068;&#x306F;</a></li><li><a href="#&#x57FA;&#x672C;&#x69CB;&#x6210;">2. &#x57FA;&#x672C;&#x69CB;&#x6210;</a></li><li><a href="#&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x7A2E;&#x5225;">3. &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x7A2E;&#x5225;</a></li><li><a href="#&#x76EE;&#x6307;&#x3059;&#x7269;">4. &#x76EE;&#x6307;&#x3059;&#x7269;</a></li><li><a href="#&#x958B;&#x767A;&#x7406;&#x5FF5;">5. &#x958B;&#x767A;&#x7406;&#x5FF5;</a></li></ul></div><a href="#PrismCascade_&#x3068;&#x306F;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#PrismCascade_&#x3068;&#x306F;">1. PrismCascade &#x3068;&#x306F;</a></li><li><a href="#&#x57FA;&#x672C;&#x69CB;&#x6210;">2. &#x57FA;&#x672C;&#x69CB;&#x6210;</a></li><li><a href="#&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;">3. &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;</a></li><li><a href="#&#x76EE;&#x6307;&#x3059;&#x7269;">4. &#x76EE;&#x6307;&#x3059;&#x7269;</a></li><li><a href="#&#x958B;&#x767A;&#x7406;&#x5FF5;">5. &#x958B;&#x767A;&#x7406;&#x5FF5;</a></li></ul></div><a href="#PrismCascade_&#x3068;&#x306F;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -348,7 +400,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概要","level":"1.1","depth":1,"next":{"title":"Core","level":"1.2","depth":1,"ref":"","articles":[{"title":"型","level":"1.2.1","depth":2,"path":"architecture/types.md","ref":"architecture/types.md","articles":[]},{"title":"抽象構文木","level":"1.2.2","depth":2,"path":"architecture/ast.md","ref":"architecture/ast.md","articles":[]},{"title":"バグ","level":"1.2.3","depth":2,"path":"architecture/issues.md","ref":"architecture/issues.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"README.md","mtime":"2025-04-11T16:37:41.306Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-11T16:38:17.933Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概要","level":"1.1","depth":1,"next":{"title":"Core","level":"1.2","depth":1,"ref":"","articles":[{"title":"型","level":"1.2.1","depth":2,"path":"architecture/types.md","ref":"architecture/types.md","articles":[]},{"title":"抽象構文木","level":"1.2.2","depth":2,"path":"architecture/ast.md","ref":"architecture/ast.md","articles":[]},{"title":"レイヤー構造（レンダリング）","level":"1.2.3","depth":2,"path":"architecture/layer_rendering.md","ref":"architecture/layer_rendering.md","articles":[]},{"title":"レイヤー構造（AST管理）","level":"1.2.4","depth":2,"path":"architecture/layer_ast.md","ref":"architecture/layer_ast.md","articles":[]},{"title":"UIとAST","level":"1.2.5","depth":2,"path":"architecture/ui_ast.md","ref":"architecture/ui_ast.md","articles":[]},{"title":"マクロ展開","level":"1.2.6","depth":2,"path":"architecture/macro.md","ref":"architecture/macro.md","articles":[]},{"title":"スケジューリング","level":"1.2.7","depth":2,"path":"architecture/scheduling.md","ref":"architecture/scheduling.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","hide-published-with","mathjax","@ansanloms/uml","swagger","anchors","navigator","collapsible-chapters","hints","search-pro-fixed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"@ansanloms/uml":{},"search":{},"collapsible-chapters":{},"swagger":{"file":""},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"uml":{"format":"svg","charset":"utf8","config":"classic"},"navigator":{},"mathjax":{"forceSVG":true,"version":"2.6-latest"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Document","language":"ja","gitbook":"*"},"file":{"path":"README.md","mtime":"2025-04-14T08:59:27.320Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2025-04-14T09:00:03.574Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
