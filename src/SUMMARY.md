@@ -2,6 +2,8 @@
 
 * [概要](README.md)
 
+* [未整理のメモ](architecture/memo_01.md)
+
 * Core
   * [型](architecture/types.md)
   * [抽象構文木](architecture/ast.md)
